@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>    
+        <title></title>
+    </head>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .wrapper {
+        display: grid;
+        grid-template-columns: 40px 50px auto 50px 40px;/* 表示5个网格列 */
+        grid-template-rows: 25% 100px 90px; /* 3个网格行*/
+    }
+    .middle {
+        background: gray;
+    }
+    .left {
+        background: orange;
+    }
+    .right {
+        background: lightcyan;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 50px 50px 50px 50px;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "aaa aaa aaa aaa"
+            "bbb bbb ccc ccc"
+            "ddd ddd ddd ddd";
+        grid-column-gap: 10px;
+        grid-row-gap: 20px;
+    }
+    .item-1 {
+        grid-area: aaa;
+    }
+    .item-2 {
+        grid-area: bbb;
+    }
+    .item-3 {
+        grid-area: ccc;
+    }
+    .item-4 {
+        grid-area: ddd;
+    }
+    </style>
+    <body>
+        <div class="wrapper">
+            <div class="item middle">middle banner</div>
+            <div class="item left">left<p class="box">content content content</p></div>
+            <div class="item right">right</div>
+        </div>
+
+        <div class="container">
+            <div class="item item-1">aaa</div>
+            <div class="item item-2">bbb</div>
+            <div class="item item-3">ccc</div>
+            <div class="item item-4">ddd</div>
+        </div>
+    </body>
+</html>

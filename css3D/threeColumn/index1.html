@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>    
+        <title></title>
+    </head>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .left, .right {
+        width: 300px;
+    }
+    .wrapper {
+        padding: 0 300px;
+        border: 1px solid red;
+        position: relative;
+        overflow: hidden;
+    }
+    .left {
+        top: 0;
+        left: 0;
+        position: absolute;
+        background: lightblue;
+    }
+    .box {
+        padding-bottom: 500px;
+    }
+    .right {
+        top: 0;
+        right: 0;
+        position: absolute;
+        padding-bottom: 500px;
+        background: lightcoral;
+    }
+    .middle {
+        padding-bottom: 500px;
+        background: lightgreen;
+    }
+    </style>
+    <body>
+        <div class="wrapper">
+            <div class="middle">middle banner</div>
+            <div class="left">left<p class="box">content content content</p></div>
+            <div class="right">right</div>
+        </div>
+    </body>
+</html>

@@ -21,3 +21,6 @@
 
 #### CSS3 核心高级技巧
 **css双飞翼布局（圣杯布局）**
+等高：实为假等高
+实现三栏布局的方法：position、felx、grid
+grid api: https://www.html.cn/archives/8510

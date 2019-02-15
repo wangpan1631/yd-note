@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" 
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minmum-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>3D cube</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            background: red;
+            margin-bottom: 20px;
+            animation: myFirst 3s;
+            -webkit-animation: myFirst 3s;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            transform: rotateY(60deg);
+            transform-style: preserve-3d;
+            -webkit-transform: rotateY(60deg);
+            -webkit-transform-style: preserve-3d;
+            border: 3px solid greenyellow;
+        }
+        @keyframes myFirst 
+        {
+            from {
+                background: red;
+            }
+            to {
+                background: green;
+            }
+        }
+        @-webkit-keyframes myFirst 
+        {
+            from {
+                background: yellowgreen;
+            }
+            to {
+                background: palevioletred;
+            }
+        }
+    </style>
+    <body>
+        <div class="box"></div>
+        <div class="box2"></div>
+    </body>
+    <script>
+        
+    </script>
+</html>
