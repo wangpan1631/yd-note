@@ -5,6 +5,7 @@
         <meta name="viewport" 
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minmum-scale=1.0"/>
         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <link rel="stylesheet" href="./cube.css">
         <title>3D cube</title>
     </head>
     <style>
@@ -15,6 +16,7 @@
         .box {
             width: 300px;
             height: 300px;
+            display: none;
             background: red;
             margin-bottom: 20px;
             animation: myFirst 3s;
@@ -23,6 +25,7 @@
         .box2 {
             width: 100px;
             height: 100px;
+            display: none;
             transform: rotateY(60deg);
             transform-style: preserve-3d;
             -webkit-transform: rotateY(60deg);
@@ -49,8 +52,17 @@
         }
     </style>
     <body>
-        <div class="box"></div>
-        <div class="box2"></div>
+        <div class="box">test</div>
+        <div class="box2">test2</div>
+        <!-- 3D cube -->
+        <div class="cube">
+            <div class="item front">front</div>
+            <div class="item back">back</div>
+            <div class="item left">left</div>
+            <div class="item right">right</div>
+            <div class="item top">top</div>
+            <div class="item bottom">bottom</div>
+        </div>
     </body>
     <script>
         
