@@ -43,6 +43,7 @@ grid api: https://www.html.cn/archives/8510
  * position为absolute或fixed
  * display为inline-block, table-cell, table-caption, flex, inline-flex
  * overflow不为visible
+ 
  **BFC原则：**
  BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
  * 两个BFC之间是独立的
