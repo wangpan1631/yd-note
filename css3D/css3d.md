@@ -50,9 +50,13 @@ grid api: https://www.html.cn/archives/8510
  * 如果生成BFC，浮动元素也跟着计算（清除浮动：为达到清除内部浮动，给父元素添加overflow:hidden生成BFC，那么在计算高度时，父元素内部浮动的子元素也会参与计算）
 
  **IFC**(Inline Formatting Contexts)直译为“内联格式化上下文”，IFC的line box（线框）高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响）
+ 
  **FFC**(Flex Formatting Contexts)直译为“自适应格式化上下文”，display值为flex或者inline-flex的元素将会生成自适应容器（flex container）
+ 
  **GFC**(GridLayout Formatting Contexts)直译为“网格布局格式化上下文”，当为一个元素设置display值为grid的时候，此元素将会获得一个独立的渲染区域，我们可以通过在网格容器（grid container）上定义网格定义行（grid definitiong rows）和网格定义列（grid definition columns）属性各在网格项目（grid item）上定义网格行（gird row）和网格列（grid columns）为每一个网格项目（grid item）定义位置和空间。
+ 
  **能用一个html实现的布局就不要用两个**
+ 
  伪类:after和::after的区别？？？
  img特性：clip-path: polygon() ???
 
