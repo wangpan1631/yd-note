@@ -26,4 +26,6 @@ Set的使用场景
 
 ECMAScript5.1 张鑫旭 博客文章
 
+http://www.cnblogs.com/xiaochaohuashengmi
+
 
