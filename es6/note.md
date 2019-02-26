@@ -15,3 +15,6 @@ v8 引擎就是chrome引擎
 
 shim polyfill区别 ，自行google
 css polyfill
+
+#### 对象
+

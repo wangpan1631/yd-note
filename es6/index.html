@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es6</title>
+</head>
+<body>
+    <script>
+        // const eat = {
+        //     eat(){
+        //         return 'eat';
+        //     }
+        // };
+        // const drink = {
+        //     drink(){
+        //         return 'drink';
+        //     }
+        // };
+        // const sunday = {
+        //     __proto__: eat,
+        //     getDrink(){
+        //         return super.drink() + 'water'
+        //     }
+        // };
+        // sunday.__proto__ = drink;
+        // console.log('----sunday---', sunday.getDrink());
+
+        // Generator
+        // let fn1 = function*(){
+        //     yield 'apple';
+        //     yield 'orange';
+        // }
+        // const a = fn1();
+        // console.log('----1--', a.next());
+        // console.log('----2--', a.next());
+        // console.log('----3--', a.next());
+        // console.log('----4--', a.next());
+
+        // for of
+        // var arr1 = [1, 8, 3];
+        // for(let i in arr1){
+        //     console.log(i); // 0,1,2
+        // }
+        // for(let i of arr1){
+        //     console.log(i); // 1,8,3
+        // }
+
+        // class
+        class Person {
+            constructor(age){
+                this.age = age;
+            }
+            tell(){
+                console.log(`my age is${this.age}`);
+            }
+        }
+        class Hong extends Person {
+            constructor(age){
+                super(age);
+            }
+            tell(){
+                super.tell()
+                console.log('hahaha');
+            }
+        }
+        const xw = new Hong('11');
+        console.log(xw.tell());
+    </script>
+</body>
+</html>
