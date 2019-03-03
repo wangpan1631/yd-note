@@ -1,4 +1,29 @@
-#### windows 常用命令
+**常见linux操作系统**
+ubuntu 、centos 、redhat
+虚拟机软件 VMware 、Virtural 、VirtualPC
+后面使用http://www.vmware.com/cn.html
+
+下载好vmware虚拟机和ubuntu，先安装虚拟机，然后新建一个虚拟机，在里面添加ubuntu镜像。
+
+**linux常用命令**
+1. 查看当前目录下的文件和文件夹(短格式目录)   -> ls
+2. 查看当前目录下的文件和文件夹(长格式目录)  -> ls -l
+3. 显示隐藏文件(文件名前面有个点号)  -> ls -a
+4. 切换目录   -> cd 目录名（cd desktop）
+5. 退回上一级目录  -> cd ..
+6. 创建目录   -> mkdir 文件名或文件夹名
+7. 复制文件 复制一个纯粹的目录   -> cp 想要复制的文件 目标目录/复制的文件名
+(eg: cp example.text aaa/example.test)
+8. 退回两级目录   -> cd ../..
+9. 显示当前目录的全部路径  -> pwd
+10. 删除命令  -> rm 要删除的文件（eg: rm example.text）
+rm -r 文件夹（eg: rm -r aaa）
+11. clear 清除
+12. 搜索文件 -> find 目录 参数(比如你可以通过以下命令在用户文件夹中搜索名字中包含screen的文件
+Find ~ -iname “screen*”)
+13. 查看当前文件  -> cat 文件名
+
+**windows 常用命令**
 1. 查看当前目录下的文件 ->  dir
 2. 跳转到当前目录下的某个文件 -> cd 目标文件名
 3. 新建文件夹   -> md 文件夹名字
@@ -13,3 +38,6 @@
 
 mac xampp
 windows IIS
+
+vim
+

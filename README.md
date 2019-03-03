@@ -1,5 +1,9 @@
 #### yd-note
 
+##### 专题一js语言新发展
+
+**录播笔记**
+
 1. [CSS3D](./subjectOne/css3D/css3d.md "CSS3D")
 2. [es6](./subjectOne/es6/note.md "es6")
 3. [linux基础入门](./subjectOne/linux基础入门/note.md "linux基础入门")
