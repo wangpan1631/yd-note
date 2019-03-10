@@ -41,3 +41,46 @@ windows IIS
 
 vim
 
+#### Linux 开发环境初准备
+带GUI的服务器
+Linux and macos   操作系统的内核很像
+Linux没有磁盘分区的概念，是一个目录树的概念
+Bin  存放一些命令
+Etc   放的是配置文件，重要的脚本
+Dev 开发用的东西
+Home  （Linux是多用户操作系统）
+Media 一般接入U盘就来这个目录找
+proc 动态的数据，系统的信息
+Boot  引导文件  （Linux的内核都在这里）
+opt 
+Root 系统管理员
+关机： shutdown now -h
+
+centOS下面安装命令Yum:linux下安装软件的命令；    ubuntu: 下面安装软件的命令apt-get
+Mac下面 brew  需要自己配置
+
+windows可以往虚拟机里的linux传文件吗  可以
+共享文件的方式
+
+端口就是提供服务的门
+HTTP默认端口是80
+https 默认端口是443
+mysql 默认端口是3306
+端口冲突：两个服务用的是一个端口号，就会产生冲突
+一个端口在同一时间只能被一个服务使用
+
+大商场相当于服务器，小商店就是端口，每个小商店都有门
+
+
+pid 就是进程的编号
+
+什么是服务？
+服务是一种特殊的进程，随着操作系统的启动而启用，关机而关闭
+什么是终端？
+提供人家操作的界面
+终端是一种协议  windows可以下载xshell putty 终端软件
+
+安装Linux 开发环境
+安装node.js
+
+mac 终端下面不带 brew  需要去它的官网
