@@ -6,18 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    background: green;
+    transform: matrix(1,0,0,1,30,30);
+}
+</style>
 <body>
+    <div class="box"></div>
     <script>
-        var a = 25;
-        (function(){
-            alert(a);
-            var a = 30
-        })(); //undefined
+        // var a = 25;
+        // (function(){
+        //     alert(a);
+        //     var a = 30
+        // })(); //undefined
 
-        (function(){
-            alert(a);
-            a = 30
-        })(); //30
+        // (function(){
+        //     alert(a);
+        //     a = 30
+        // })(); //30
     </script>
 </body>
 </html>
