@@ -34,3 +34,6 @@ xss    sql    csrf
 3. http://webdriver.io/ 
 4. 冒烟测试smoketest自由测试的一种，找到一个bug开放修复，然后专门针对此bug,有点节省时间
 5. 回归测试
+
+
+
