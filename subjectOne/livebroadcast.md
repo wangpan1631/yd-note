@@ -18,3 +18,13 @@
 https://www.cnblogs.com/tjyoung/p/8976013.html
 看了这边文章，真心是不好理解
 1. 函数式编程(Functional Programming)
+
+#### 3.19 函数式编程直播课
+所有成员
+因react的高阶函数而火起来的
+不是用函数编程，是用数学的思维方式 去编程，
+没有if else
+柯里化，对函数参数的缓存   bind也是一种柯里化
+浏览器目前没有实现尾调用优化
+console.trace() 可以查看调用帧
+闭包 缓存了上下文执行环境的词法作用域
