@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo</title>
+</head>
+<body>
+    <script>
+        const checkage = min => (age => age > min);
+        const checkage18 = checkage(18);
+        console.log(checkage18(20));
+
+
+        //bind 实现经典的柯里化
+        function foo (p1, p2) {
+            this.val = p1 + p2;
+        }
+        var bar = foo.bind(null, 'p1');
+        var baz = new bar('p2');
+        console.log(baz.val);
+
+    </script>
+</body>
+</html>
