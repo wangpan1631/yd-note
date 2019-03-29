@@ -36,4 +36,11 @@ xss    sql    csrf
 5. 回归测试
 
 
-
+**直播课QA**
+* 单元测试
+**断言库**：jasmine(BDD)、chai.js(双模)
+npm init -y 生成一个项目
+在项目下安装 npm i karma --save-dev
+全局安装： npm i -g karma-cli
+然后执行 karma init (回车，选jasmine，PhantomJS 无头浏览器，中间的步骤大多可以直接默认回车，最后生成**karma.conf.js**配置文件)
+看代码覆盖率需要安装依赖 npm i karma-coverage --save-dev
