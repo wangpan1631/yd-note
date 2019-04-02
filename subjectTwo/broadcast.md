@@ -44,4 +44,29 @@ nodejs里面的每个api都是异步执行的，是观察者模式
 node.js中函数的使用与javascript类似
 
 **nodejs路由**
+参考链接：https://blog.csdn.net/userrefister/article/details/79349780
+https://blog.csdn.net/xxtnt/article/details/83151443
+* localhost:8000/c/a?params (router: c->controller   a->action)  一个controller对应多个action
+* url.parse(string).path  拿到url
+* url.parse(string).pathname  拿到路由
+* querystring(string)['foo']   拿到参数
+* node.js中url模块中的parse函数提供了解析get请求参数的功能
 
+
+**node.js全局对象**
+
+* js有一个特殊的对象，称为全局对象，它及其所有属性都可以在程序的任何地方访问，及全局变量。在浏览器js中，通常window是全局对象，而Node.js中的全局对象是global，所有全局变量都是global对象的属性。
+* __filename, 表示当前正在执行的脚本的文件名，它将输出文件所在位置的绝对路径，且和命令行参数所指定的文件名不一定相同。如果在模块中，返回的值是模块文件的路径。
+* __dirname，表示当前执行脚本所在的目录。
+* process ，它用于描述当前Node.js进程状态的对象，提供了一个与操作系统的简单接口，通常在你写本地命令行程序的时候，少不了要和它打交道。
+
+推荐库：underscore
+
+**node.js文件系统**
+
+
+node.js学习资源：
+https://nodeschool.io/zh-cn/
+https://cnodejs.org/
+https://www.oschina.net/p/nodejs/
+https://nodejs.org/zh-cn/docs/ 
