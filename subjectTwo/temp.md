@@ -23,6 +23,16 @@ express and koa has different next()
 
 项目的结构和部署，学习别人的思想，而不是单纯的使用api
 
+#### day4-4
+express常用的错误处理中间件：
+* app.use(logErrors)
+* app.use(clientErrorHandler)
+* app.use(errorHandler)
+
+模板引擎
+推荐：swig
+
+
 
 ### ----------zf----------
 
