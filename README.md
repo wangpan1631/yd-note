@@ -1,6 +1,4 @@
-#### yd-note
-
-##### 专题一js语言新发展
+#### 专题一：js语言新发展
 
 **录播笔记**
 
@@ -11,3 +9,4 @@
 5. [php](./subjectOne/php/note.md "php")
 6. [单元测试](./subjectOne/unittest/note.md "单元测试")
 
+#### 专题二：nodejs
