@@ -32,6 +32,8 @@ express常用的错误处理中间件：
 模板引擎
 推荐：swig
 
+**node热部署工具supervisor**,supervisor会不停的watch你应用下面的所有文件，发现有文件被修改，就重新载入程序文件这样就实现了部署，修改了程序文件后马上就能看到变更后的结果。安装：npm install -g supervisor
+
 
 
 ### ----------zf----------

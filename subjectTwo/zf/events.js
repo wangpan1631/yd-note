@@ -10,7 +10,23 @@ function (type, listener) {
         this.events[type] = [listener];
     }
 }
-EventEmitter.prototype.emit = function(type){
-    this.events[type] && this.events[type].forEach(listener => listener());
+EventEmitter.prototype.once = function (type, listener) {
+    // 用完即焚
+    let wrapper = (...rest) => {
+        listener.apply(this, rest); // 先让原始的监听函数执行
+        this.removeListener(type, wrapper);
+    }
+    this.on(type, wrapper)
+}
+EventEmitter.prototype.removeListener = function (type, listener) {
+   if (this.events[type]) {
+       this.events[type] = this.events[type].filter(l => l != listener);
+   } 
+}
+EventEmitter.prototype.removeAllListener = function (type) {
+   delete this.events[type];
+ }
+EventEmitter.prototype.emit = function(type, ...rest){
+    this.events[type] && this.events[type].forEach(listener => listener.apply(this, rest));
 }
 module.exports = EventEmitter;
