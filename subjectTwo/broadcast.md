@@ -47,8 +47,6 @@ heap：堆 stack： 栈
 
 
 
-
-
 在终端输入node会进入node的环境，要退出的话，按两次ctrl+c，或者输入.exit 退出
 npm.taobao.org(npm 的中国镜像， cnpm是中国的npm服务器，要使用cnpm需要先安装：npm i cnpm)
 
@@ -119,3 +117,9 @@ https://nodeschool.io/zh-cn/
 https://cnodejs.org/
 https://www.oschina.net/p/nodejs/
 https://nodejs.org/zh-cn/docs/ 
+
+
+**day413 实战作业**
+后面所有的实战都是围绕yd-books这个项目来进行的
+node热部署工具（supervisor）：https://www.cnblogs.com/Leo_wl/p/3800276.html
+删除某个依赖包: npm remove 包名（npm remove supervisor）
