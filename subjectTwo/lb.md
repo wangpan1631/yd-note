@@ -177,3 +177,8 @@ node热部署工具（supervisor）：https://www.cnblogs.com/Leo_wl/p/3800276.h
 * npm的使用方法
 * npm常用命令
 * npm 更新：npm install npm -g
+
+**day5-20 Express入门**
+1. 中间件，为了区分用户操作，解决代码冗余的过程
+2. RESTful架构风格
+3. 静态文件，express提供了内置的中间件express.static来设置静态文件如：图片、CSS、JavaScript等。
