@@ -75,3 +75,13 @@ function fn1(name:string):string{}
 #### VUE
 vue是数据驱动的组件，为现代化的web界面而生，vue不是一个框架，它只是一个提供mvvm风格的双向数据绑定的库，专注于UI层面。
 vue核心就是object.definepropterty
+
+
+前端发展方向：
+前端图形化算法工程师
+前端架构
+前端全栈
+高阶组件
+
+#### React
+专注UI层，适用于大型应用项目的库，可以动态的感知state的变化
