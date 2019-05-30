@@ -83,5 +83,24 @@ vue核心就是object.definepropterty
 前端全栈
 高阶组件
 
-#### React
-专注UI层，适用于大型应用项目的库，可以动态的感知state的变化
+#### React(关键几点: jsx、props、state、生命周期)，专注UI层的库，适用于大型应用项目的库，可以动态的感知state的变化
+* 特点： 单向数据流（vue是双向数据流吗，双向绑定？）
+**Flux**，是一种架构思想，专门解决软件的结构问题。它跟MVC架构是同一类东西，但是更加简单和清晰。
+* View: 视图层
+* Action(动作): 视图层发出的消息（比如mouseClick）
+* Dispatcher(派发器): 用来接收Actions、执行回调函数
+* Store（数据层）：用来存放应用的状态，一旦发生变动，就提醒View要更新页面。
+
+**React性能调优**
+shouldComponentUpdate
+mixins: [React.addons.PureRenderMixin]
+```
+shouldComponentUpdata: function(nextProps, nextState) {
+    return nextProps.label !== this.props.label;
+}
+
+construct(props){
+    super(props);
+    this.shouldComponentUpdata = React.addons.PureRenderMixin.shouldComponentUpdate.bind(this);
+}
+```
