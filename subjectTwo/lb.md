@@ -202,4 +202,53 @@ node热部署工具（supervisor）：https://www.cnblogs.com/Leo_wl/p/3800276.h
 * **robots.txt**，是一个文本文件，robots.txt是一个协议，不是一个命令。robots.txt是爬虫要查看的第一个文件。robotx.txt文件告诉爬虫在服务器上什么文件是可以被查看的，搜索机器人就会按照该文件中的内容来确定访问的范围。
 * 配置爬虫系统和开发环境 ，需要用到的node模块：express request cheerio
 
-**comet**
+#### 消息推送（app的消息推送）
+**数据推送之comet**
+**数据推送之webSocket**
+* 安装socket.io (npm i socket.io -S)
+**数据推送之SSE(Server-Send Event)**, EventSource
+
+#### Nginx的反向代理与负载均衡
+* 什么是反向代理和负载均衡?
+* 什么是正向代理和反向代理？**正向代理代理的对象是客户端，反向代理代理的对象是服务端** [正向和反向代理的区别](https://www.cnblogs.com/zhijun/p/proxy.html "正向和反向代理的区别")
+ **部署NodeJS上线步骤**
+ 1. 打开https://brew.sh/index_zh-cn.html
+ 2. brew search ngnix(先查看是否有nginx)   brew install nginx(安装)
+ 3. brew info nginx
+ 4. nginx -v 查看nginx信息
+ 5. 启动sudo brew services start nginx(默认端口8080) ---这个方法比较蠢
+ - 备注：如果安装过jenkins的话这里失效
+ - sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist
+ - systemctl start jenkins
+ 6. 关闭sudo brew services stop nginx / nginx
+ 7. nginx -s reload 、nginx -s stop
+ 8. 打开nginx具体安装目录 查看配置文件 /user/local/etc/nginx/
+ 9. 验证配置文件nginx -t -c 自己的配置文件地址
+ 10. 拷贝配置文件至node项目目录重新修改
+ 11. 服务器端的nginx地址
+ 12. pm2动态监测文件
+ 13. 查看当前谁在使用Node进程 ps aux | grep node
+ 14. 盖世绝学： lsof -i tcp:8081(查看谁在用8081端口)     kill -9 pid
+ 15. shell脚本
+ **nginx的使用要自己手动配置一下才能理解的更清楚**
+ ```
+nginx.conf配置文件
+worker_processes 4;
+events{
+    worker_connections 1024;
+}
+http{
+    upstream firsttest{
+        server 192.168.0.21;
+        server 192.168.0.31;
+    }
+    server{
+        listen 8080;
+        location / {
+            proxy_pass http:/firsttest;
+        }
+    }
+}
+ ```
+#### 腾讯地图H5 Node JS架构搭建
+* 完备的中间件，错误处理、配置、报告、用户信息、客户端判断是否是微信QQ、地理定位通过next挂载到request对象全局即可

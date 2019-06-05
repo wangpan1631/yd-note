@@ -104,3 +104,8 @@ construct(props){
     this.shouldComponentUpdata = React.addons.PureRenderMixin.shouldComponentUpdate.bind(this);
 }
 ```
+
+**CPU 和 GPU的区别？**  CPU即中央处理器，GPU即图形处理器
+**堆和栈的区别？**  
+* 栈区(stack) - 由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈
+* 堆区(heap) - 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
