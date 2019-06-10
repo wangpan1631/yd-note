@@ -104,6 +104,16 @@ construct(props){
     this.shouldComponentUpdata = React.addons.PureRenderMixin.shouldComponentUpdate.bind(this);
 }
 ```
+* 收到初始化一个react项目的步骤
+1. $ mkdir reactDemo 来创建一个项目文件夹
+2. $ npm init -y 来初始化项目
+3. 安装webpack，先全局安装：$ npm i webpack -g，然后通过命令**webpack -h**查看(npm info webpack是查看webpack版本信息)
+4. 进入项目目录再次安装webpack(这步是局部安装)，$ npm i webpack --save-dev
+
+
+
+
+
 
 **CPU 和 GPU的区别？**  CPU即中央处理器，GPU即图形处理器
 **堆和栈的区别？**  
