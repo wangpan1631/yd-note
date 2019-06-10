@@ -7,8 +7,8 @@
 * 锁的问题，并发资源的处理（锁是并发才会出现的问题，而node是单线程，没有并发，就不需要锁了）
 **多线程的实现**：并不是真正在同一个时间点执行多个任务，而是通过非常快速的切换时间片来实现。
 
-语言分为：编译型和解释型 （编译型的比较快）
-在node.js里，如果一个线程崩了，那么整个服务器就宕了
+* 语言分为：编译型和解释型 （编译型的比较快）
+* 在node.js里，如果一个线程崩了，那么整个服务器就宕了
 
 为什么js是单线程？这是由Js这门脚本语言的用途决定的。web worker（号称是多线程的，完全受主线程控制，不能操作DOM）并没有改变js单线程的本质
 **浏览器模型：**
@@ -182,4 +182,73 @@ node热部署工具（supervisor）：https://www.cnblogs.com/Leo_wl/p/3800276.h
 1. 中间件，为了区分用户操作，解决代码冗余的过程
 2. RESTful架构风格
 3. 静态文件，express提供了内置的中间件express.static来设置静态文件如：图片、CSS、JavaScript等。
-4. express中间件，
+4. express中间件，middleware
+5. 设置必经路由，来判断是否登录
+6. 模板引擎swig 后端数据可以直接在前端展示，不需要请求，但是要考虑到性能问题
+7. orm插件可以操作数据库
+8. express+php实战，有node操作数据库
+9. 错误处理要放到底部来兜底
+
+#### Koa,完全基于ES6,由Express原班人马打造的,Koa并没有捆绑任何中间件，而是提供了一套优雅的方法，帮助您快速而愉快地编写服务端的应用程序。
+1. 老袁推荐安装I/Ojs
+2. 想用好koa，必须学好ES6
+3. koa执行顺序有一个特殊地方，遇到next()就会挂起，执行后面没有next()的代码，然后再逆行回来执行前面的next()后面的代码
+4. 错误处理和express不同，不能放到底部
+5. koa本身是比较纯净的，需要什么中间件就去网上npm仓库找
+6. koa2
+
+**爬虫系统以及Robots协议介绍**
+* **爬虫**，是一种自动获取网页内容的程序，是搜索引擎的重要组成部分，因此搜索引擎优化很大程度上就是针对爬虫而做出的优化。
+* **robots.txt**，是一个文本文件，robots.txt是一个协议，不是一个命令。robots.txt是爬虫要查看的第一个文件。robotx.txt文件告诉爬虫在服务器上什么文件是可以被查看的，搜索机器人就会按照该文件中的内容来确定访问的范围。
+* 配置爬虫系统和开发环境 ，需要用到的node模块：express request cheerio
+
+#### 消息推送（app的消息推送）
+**数据推送之comet**
+**数据推送之webSocket**
+* 安装socket.io (npm i socket.io -S)
+**数据推送之SSE(Server-Send Event)**, EventSource
+
+#### Nginx的反向代理与负载均衡
+* 什么是反向代理和负载均衡?
+* 什么是正向代理和反向代理？**正向代理代理的对象是客户端，反向代理代理的对象是服务端** [正向和反向代理的区别](https://www.cnblogs.com/zhijun/p/proxy.html "正向和反向代理的区别")
+ **部署NodeJS上线步骤**
+ 1. 打开https://brew.sh/index_zh-cn.html
+ 2. brew search ngnix(先查看是否有nginx)   brew install nginx(安装)
+ 3. brew info nginx
+ 4. nginx -v 查看nginx信息
+ 5. 启动sudo brew services start nginx(默认端口8080) ---这个方法比较蠢
+ - 备注：如果安装过jenkins的话这里失效
+ - sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist
+ - systemctl start jenkins
+ 6. 关闭sudo brew services stop nginx / nginx
+ 7. nginx -s reload 、nginx -s stop
+ 8. 打开nginx具体安装目录 查看配置文件 /user/local/etc/nginx/
+ 9. 验证配置文件nginx -t -c 自己的配置文件地址
+ 10. 拷贝配置文件至node项目目录重新修改
+ 11. 服务器端的nginx地址
+ 12. pm2动态监测文件
+ 13. 查看当前谁在使用Node进程 ps aux | grep node
+ 14. 盖世绝学： lsof -i tcp:8081(查看谁在用8081端口)     kill -9 pid
+ 15. shell脚本
+ **nginx的使用要自己手动配置一下才能理解的更清楚**
+ ```
+nginx.conf配置文件
+worker_processes 4;
+events{
+    worker_connections 1024;
+}
+http{
+    upstream firsttest{
+        server 192.168.0.21;
+        server 192.168.0.31;
+    }
+    server{
+        listen 8080;
+        location / {
+            proxy_pass http:/firsttest;
+        }
+    }
+}
+ ```
+#### 腾讯地图H5 Node JS架构搭建
+* 完备的中间件，错误处理、配置、报告、用户信息、客户端判断是否是微信QQ、地理定位通过next挂载到request对象全局即可

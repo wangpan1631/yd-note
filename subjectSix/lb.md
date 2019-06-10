@@ -75,3 +75,37 @@ function fn1(name:string):string{}
 #### Vue
 vue是数据驱动的组件，为现代化的web界面而生，vue不是一个框架，它只是一个提供mvvm风格的双向数据绑定的库，专注于UI层面。
 vue核心就是object.definepropterty
+
+
+前端发展方向：
+前端图形化算法工程师
+前端架构
+前端全栈
+高阶组件
+
+#### React(关键几点: jsx、props、state、生命周期)，专注UI层的库，适用于大型应用项目的库，可以动态的感知state的变化
+* 特点： 单向数据流（vue是双向数据流吗，双向绑定？）
+**Flux**，是一种架构思想，专门解决软件的结构问题。它跟MVC架构是同一类东西，但是更加简单和清晰。
+* View: 视图层
+* Action(动作): 视图层发出的消息（比如mouseClick）
+* Dispatcher(派发器): 用来接收Actions、执行回调函数
+* Store（数据层）：用来存放应用的状态，一旦发生变动，就提醒View要更新页面。
+
+**React性能调优**
+shouldComponentUpdate
+mixins: [React.addons.PureRenderMixin]
+```
+shouldComponentUpdata: function(nextProps, nextState) {
+    return nextProps.label !== this.props.label;
+}
+
+construct(props){
+    super(props);
+    this.shouldComponentUpdata = React.addons.PureRenderMixin.shouldComponentUpdate.bind(this);
+}
+```
+
+**CPU 和 GPU的区别？**  CPU即中央处理器，GPU即图形处理器
+**堆和栈的区别？**  
+* 栈区(stack) - 由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈
+* 堆区(heap) - 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
