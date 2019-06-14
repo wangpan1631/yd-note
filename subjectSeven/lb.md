@@ -13,3 +13,7 @@
 * 下载地址：https://developer.android.google.cn/studio/
 * Android debugger环境与release环境的区别：debug环境用测试接口，打印Log，release环境用正式接口，不打印Log。
 jar包 jdk sdk apk(是AndroidPackage的缩写，即Android安装包)都是指什么？
+
+6.13 IOS
+操作系统：安卓系统、苹果系统(OSX基于Unix的操作系统)、window系统
+软硬件要求：CPU双核，内存8G，Mac电脑，要选pro，测试机；OS X10。9.3+  Xcode6.0+
