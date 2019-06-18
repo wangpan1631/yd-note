@@ -1,4 +1,5 @@
 #### react note
+#### 核心概念
 1. 很棒的资源查询网站：MDN 和 javascript.info
 
 2. JSX 可以防止注入攻击，因为React DOM在渲染所有输入内容之前，默认会进行转义，可以有效地防止XSS（cross-site-scripting, 跨站脚本）攻击
@@ -73,3 +74,52 @@ this.setState((state, props) => {
 14. **React哲学**
 * 组件的划分，可以将组件当做一种函数或者对象来考虑，根据**单一功能原则**来判定组件的范围，也就是说，一个组件原则上只能负责一个功能。如果他需要负责更多的功能，这个时候应该考虑将它拆分成更小的组件。
 * 最好将渲染UI和添加交互这两个过程分开。
+
+#### 高阶指引
+1. **Context**, Context提供了一个无需为每层组件手动添加props，就能在组件树间进行数据传递的方法；使用场景：如果组件树一层层嵌套的很深，底层的子组件需要顶层的父组件一层一层往下传递数据给它，这个时候就可以使用context，它可以共享那些对于一个组件树而言是“全局”的数据，其实就是**context可以实现跨层级的组件数据传递**。（没有在实际项目中使用过，还是有些晕乎！）
+2. [context参考资料](https://juejin.im/post/5a90e0545188257a63112977 "context参考资料")
+
+3. **错误边界**，是一种React组件，这种组件**可以捕获并打印发生在其子组件树任何位置的js错误、并且，它会渲染出备用UI**，而不是渲染那些崩溃了的子组件树。错误边界在渲染期间、声明周期方法和整个组件树的构造函数中捕获错误。(可以使用错误边界，而非每次出现错误时卸载整个应用。错误边界是用以在子树内部捕获错误并在其位置展示回退UI的特殊组件，可以认为错误边界类似于try-catch语句，但针对React组件)
+4. 错误边界无法捕获以下场景中的错误：事件处理、异步代码、服务端渲染、它自身抛出来的错误。
+5. 自React16起，任何未被错误边界捕获的错误将会导致整个React组件树被卸载。
+
+6. **Refs转发**
+```
+const FancyButton = React.forwardRef((props, ref) => {
+    <button ref={ref} className="FancyButton>
+        {props.children}
+    </button>
+})
+
+// 你可以直接获取 DOM button的 ref：
+const ref = React.createRef();
+<FancyButton ref={ref}> Click me!</FancyButton>
+```
+
+7. **Fragments** <></> ，官方说目前这种写法还没有得到大多数工具的支持
+```
+class Colums extends React.Component {
+    render() {
+        return (
+            <>
+                <td>Hello</td>
+                <td>World</td>
+            </td>
+        );
+    }
+}
+```
+
+8. **高阶组件(HOC--higher order component)**，高阶组件是参数为组件，返回值为新组件的函数。（不太好理解，晕乎！）
+
+9. **深入JSX**，它仅仅只是React.createElement(component, props, ...children)函数的语法糖。
+```
+// 属性展开，如果已经有了一个props对象，可以使用展开运算符...来在JSX中传递整个props对象，以下两个组件是等价的：
+function App1() {
+    return <Greeting firstName="Ben" lastName="Hector" />;
+}
+function App2() {
+    const props = {firstName: 'Ben', lastName='Hector'};
+    return <Greeting {...props} />
+}
+```
