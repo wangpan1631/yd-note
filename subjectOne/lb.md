@@ -75,7 +75,7 @@ grid api: https://www.html.cn/archives/8510
  ####animate.css（库）
 
 #### ES5核心知识点
-1. 闭包，可以取得其它函数内部变量的函数，函数可以作为参数或者返回值。闭包一般会造成内存泄漏，
+1. 闭包，可以取得其它函数内部变量的函数，函数可以作为参数或者返回值。闭包一般会造成内存泄漏，用完后置为null
 ```
 function f1(){
     var N = 0;
@@ -91,6 +91,11 @@ result();
 result();
 result = null; // 用完了之后把它置为null可以来处理内存泄漏
 ```
+2. 构造函数里的属性的优先级比原型链的要高
+3. 面向对象编程的时候，JS没有类的概念，可以用函数替代，constructor实际就是对应的那个函数，prototype按引用传递，用Object.create()来创建一个原型链的副本
+4. 改变this的方法有call apply bind
+5. 函数提升的级别高于同名变量的提升
+
 #### 后端工程师的世界
 1. nodejs express koa （Node的web服务器）
 2. html css js前端代码是跑在浏览器里面的（浏览器和服务器）
