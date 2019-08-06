@@ -70,11 +70,27 @@ grid api: https://www.html.cn/archives/8510
  伪类:after和::after的区别？？？
  img特性：clip-path: polygon() ???
 
- ####贝塞尔曲线
+ #### 贝塞尔曲线
  http://cubic-bezier.com/#.25,.1,.25,1
  ####animate.css（库）
 
-
+#### ES5核心知识点
+1. 闭包，可以取得其它函数内部变量的函数，函数可以作为参数或者返回值。闭包一般会造成内存泄漏，
+```
+function f1(){
+    var N = 0;
+    function f2(){
+        N += 1;
+        console.log(N);
+    }
+    return f2;
+}
+var result = f1();
+result();
+result();
+result();
+result = null; // 用完了之后把它置为null可以来处理内存泄漏
+```
 #### 后端工程师的世界
 1. nodejs express koa （Node的web服务器）
 2. html css js前端代码是跑在浏览器里面的（浏览器和服务器）
