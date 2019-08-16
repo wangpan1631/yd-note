@@ -1,3 +1,5 @@
+* linux发行版简单点说就是将linux内核与应用软件做一个大包，较知名的发行版有：ubuntu redhat centos等
+* www.linux.org
 **常见linux操作系统**
 ubuntu 、centos 、redhat
 虚拟机软件 VMware 、Virtural 、VirtualPC
@@ -6,6 +8,7 @@ ubuntu 、centos 、redhat
 下载好vmware虚拟机和ubuntu，先安装虚拟机，然后新建一个虚拟机，在里面添加ubuntu镜像。
 
 **linux常用命令**
+* 在Linux系统下是严格区分大小写的！
 1. 查看当前目录下的文件和文件夹(短格式目录)   -> ls
 2. 查看当前目录下的文件和文件夹(长格式目录)  -> ls -l
 3. 显示隐藏文件(文件名前面有个点号)  -> ls -a
