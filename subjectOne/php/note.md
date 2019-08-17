@@ -36,7 +36,7 @@ https://www.cnblogs.com/hfdp/p/6026877.html
 3. OOP(Object-Oriented Programming, 面向对象的编程)技术为编程人员敞开了一扇大门，使其编程的代码更简洁、更易于维护、并且具有更强的可重用性。
 
 * OOP达到了软件工程的三个目标：重用性、灵活性、扩展性
-* OOP面向对象编程的特点：封装、集成、多态
+* OOP面向对象编程的特点：封装、继承、多态
 
 * 面向对象介绍
 1. 类和对象之间的关系
@@ -48,6 +48,41 @@ https://www.cnblogs.com/hfdp/p/6026877.html
 * 对象的状态
 * 对象的标识
 
+* 类的声明 --> 成员属性、成员方法
+```
+[修饰符]class类名{
+    [成员属性]  // 也叫成员变量
+    [成员方法] // 也叫成员函数
+}
+// 完整格式
+[修饰符]class类名[exteds父类][implements接口1[,接口2...]]{
+    [成员属性] // 也叫成员变量
+    [成员方法] // 也叫成员函数
+}
+```
+* 成员属性，不可以是带运算符的表达式、变量、方法或函数调用。
+```
+// wrong
+public $var3 = 1 + 2;
+public $var4 = self::myStaticMethod();
+public $var5 = $myVar;
+// right
+public $var6 = 100;
+public $var7 = myConstant;
+public $var8 = self::classConstant;
+public $var9 = array(true, false)
+```
+
+* 成员方法
+```
+[修饰符]function方法名(参数...){
+    [方法体]
+    [return返回值]
+}
+public function say(){
+    echo "人在说话"
+}
+```
 #### 构造方法与析构方法
 
 1. 构造方法语法格式：
