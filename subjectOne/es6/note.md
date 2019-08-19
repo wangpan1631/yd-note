@@ -28,4 +28,13 @@ ECMAScript5.1 张鑫旭 博客文章
 
 http://www.cnblogs.com/xiaochaohuashengmi
 
+#### day0819 ES6编程风格
+* const and let 建议使用const的理由如下：
+1. const可以提醒大家不能被改变
+2. const比较符合函数式编程
+3. 本质的区别，编译器内部的处理机制不同
 
+* class
+* Set
+* Map
+* module
