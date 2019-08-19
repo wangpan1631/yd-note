@@ -100,6 +100,10 @@ result = null; // 用完了之后把它置为null可以来处理内存泄漏
 1. nodejs express koa （Node的web服务器）
 2. html css js前端代码是跑在浏览器里面的（浏览器和服务器）
 3. 前后端分离，不但从工程上分离，而且前端代码和后端代码部署到不同的服务器上了，做了物理分离（前后端分离的典型应用场景：H5游戏、Native开发的移动APP、浏览器插件（比如google的扩展程序）、微信小程序、Electron开发的桌面应用、各类大型网站）
-4. nginx, 做反向代理，维护静态资源
+4. nginx, 做反向代理，维护静态资源，分担压力
 5. go语言，集成了现代语言的很多优势，运行速度接近C语言，在浏览器可能会挑战JS
 6. **蚂蚁笔记就是用go语言写的**，[蚂蚁笔记开源代码](https://github.com/leanote/leanote "蚂蚁笔记开源代码")
+7. 新浪微博开放平台，后端接口文档书写规范
+8. LAMP(linux apache masql php)、CMS(内容管理系统)
+9. PHP框架：ThinkPHP yii Laravel
+10. Java是面向对象的，强类型的语言，java虚拟机 jvm
