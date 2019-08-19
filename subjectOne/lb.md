@@ -107,3 +107,6 @@ result = null; // 用完了之后把它置为null可以来处理内存泄漏
 8. LAMP(linux apache masql php)、CMS(内容管理系统)
 9. PHP框架：ThinkPHP yii Laravel
 10. Java是面向对象的，强类型的语言，java虚拟机 jvm
+
+
+#### linux入门，见linux基础入门笔记
