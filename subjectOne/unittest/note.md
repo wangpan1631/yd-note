@@ -15,7 +15,7 @@ better-assert(TDD断言库)；should.js(BDD断言库);expect.js(BDD断言库)；
 * karma 自动化runner集成phantomjs无刷新
 * 报告和单测覆盖率检查
 
-* 性能测试 
+#### 性能测试 
 面向切面编程AOP无侵入式统计
 * 压力测试
 对网络接口做压力测试需要检查的几个常用指标有吞吐率、响应时间和并发数，这些指标反映了服务器并发处理能力。
@@ -24,7 +24,7 @@ pv网站当日访问人数，uv独立访问人数。pv每天几十万甚至上�
 
 常用的压力测试工具是ab  siege   http_load
 
-* 安全测试
+#### 安全测试
 xss    sql    csrf
 
 * 用户真实性检查
