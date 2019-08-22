@@ -123,3 +123,8 @@ function App2() {
     return <Greeting {...props} />
 }
 ```
+
+10. 非DOM属性介绍
+* dangerouslySetInnerHTML警告，应该被用来表明净化后的数据。
+* ref在react里的应用
+* key提高渲染性能
