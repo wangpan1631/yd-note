@@ -126,5 +126,42 @@ function App2() {
 
 10. 非DOM属性介绍
 * dangerouslySetInnerHTML警告，应该被用来表明净化后的数据。
-* ref在react里的应用
+* ref在react里的应用（ref获取真实的DOM节点，是真实DOM，不再是js虚拟出来的DOM对象）
 * key提高渲染性能
+
+11. webapp的优缺点
+- web基于DOM，而DOM很慢
+- DOM拖慢JS
+- 网页是单线程的
+- 网页没有硬件加速
+- **跨平台：所有系统都能运行**
+- **免安装：打开浏览器，就能使用**
+- **快速部署：升级只需在服务器更新代码**
+- **超链接：可以与其他网站互联，可以被搜索引擎检索**
+- **（如果将网页变成了一个个canvas,这样就绕开了DOM,降低了操作时滞，canvas可以被硬件加速，这样就提高了性能，再造一套HTML+CSS。）**
+
+12. react-canvas，使用这个库可以抛开JSX，构建高性能的应用（使用这个库需要canvas功底好）
+
+13. 状态的介绍：
+- 状态：事物所处的状况
+- 状态是由事物自行处理，不断变化的
+- 对于react来讲一切变化全部基于状态
+- setState来更新状态（setState -> diff算法 -> 如果变化了就更新）
+
+14. 属性和状态的区别
+- 都是纯JS对象
+- 都会触发render更新
+- 都具有确定性
+- 组件在运行时**需要修改**的数据就是状态
+- **属性值传递一次，是组件与组件之间信息传递的载体，状态在不停的更新，是在组件内部更新的**
+
+15. 生命周期
+> 组件本质上是**状态机，**输入确定，输出一定确定。状态发生
+* 初始化阶段
+- getDefaultProps(ES6 defaultProps)：只调用一次，实例之间**共享引用**
+- getInitialState(ES6 super(props){})：初始化每个实例特有的状态
+- componentWillMount：render之前最后一次**修改状态**的机会
+- render：只能访问this.props和this.state，只有一个顶层组件，**不允许**修改状态和dom输出。
+- componentDidMount：成功render并渲染完成真实DOM之后触发，可以修改DOM（ReactDOM.findDOMNode(this.refs.myText)）
+* 运行时阶段
+* 销毁阶段
