@@ -162,6 +162,19 @@ function App2() {
 - getInitialState(ES6 super(props){})：初始化每个实例特有的状态
 - componentWillMount：render之前最后一次**修改状态**的机会
 - render：只能访问this.props和this.state，只有一个顶层组件，**不允许**修改状态和dom输出。
-- componentDidMount：成功render并渲染完成真实DOM之后触发，可以修改DOM（ReactDOM.findDOMNode(this.refs.myText)）
+- componentDidMount：成功render并渲染完成真实DOM之后触发，可以修改DOM（ReactDOM.findDOMNode(this.refs.myText)）(可以在这个方法中调用setTimeout、setInterval或者发送AJAX请求等操作)
 * 运行时阶段
+- componentWillReceiveProps：父组件修改属性触发，可以修改新属性和状态（在组件接收到一个新的prop时被调用）
+- shouldComponentUpdate：判断一个节点是否需要更新，返回false会阻止render调用（在组件接收到新的props或state时被调用）
+- componentWillUpdate：不能修改属性和状态（在组件接收到新的props或state但没有render时被调用）
+- render：只能访问this.props和this.state，只有一个顶层组件，不允许修改状态和dom输出
+- componentDidUpdate：更新完成（在组件完成更新之后立即调用）
 * 销毁阶段
+- componentWillUnmount：在删除组件之前进行一些删除操作，比如删除定时器
+
+16. 可控和不可控控件
+- 可控控件：符合react的数据流，数据存储在state中，便于使用;便于对数据进行处理；defaultValue和value={this.state.value}
+- 不可控
+
+
+
