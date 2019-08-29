@@ -1,4 +1,6 @@
 #### 专题六MVC MVVM框架那些事 录播笔记
+- MVC -> MVP -> MVVM（MVVM的由来是MVP）
+#### MVC: model view controler
 
 #### Typescript
 * ts安装
