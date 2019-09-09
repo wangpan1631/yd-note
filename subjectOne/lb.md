@@ -122,3 +122,19 @@ result = null; // 用完了之后把它置为null可以来处理内存泄漏
 - 委托、泛型(泛滥的类型)、反射()、集合（动态数组（ArrayList/Hashtabel/Sortedlist/Stack/Queue））、匿名方法、拆箱
 - 多线程
 
+#### JS语言精粹
+* 普通函数和构造函数的区别，使用new调用的就是构造函数。
+* 每个函数都有一个prototype的对象属性，对象内有一个constructor属性，默认指向函数本身；
+* 每个对象都有一个__proto__的属性，指向其父类型的prototype
+
+* Function.prototype.bind: bind返回一个新函数，函数的作用域为bind参数
+* runtime(运行时) 、 词法作用域
+
+```
+class Wang extends Person {
+    constructor (props) {
+        super(props); // 继承父类的构造函数
+    }
+}
+```
+* 惰性函数
