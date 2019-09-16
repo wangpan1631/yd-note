@@ -25,6 +25,9 @@
 * [ping详解](https://blog.csdn.net/hezeyujiang/article/details/79504038 "ping详解")
 * [ping的用法大全](https://blog.csdn.net/sdzg_wq/article/details/629378 "ping的用法大全")
 
+
+#### JS核心
+* 箭头函数和简写函数不能用作构造函数，不能new，如果new的话会报错
 #### 实战作业相关
 1. mvc
 2. xampp是开发环境，不适合生成环境，因为它开了很多不该开的端口和权限
