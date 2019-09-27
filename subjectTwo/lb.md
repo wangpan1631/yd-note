@@ -183,10 +183,11 @@ node热部署工具（supervisor）：https://www.cnblogs.com/Leo_wl/p/3800276.h
 3. 静态文件，express提供了内置的中间件express.static来设置静态文件如：图片、CSS、JavaScript等。
 4. express中间件，middleware
 5. 设置必经路由，来判断是否登录
-6. 模板引擎swig 后端数据可以直接在前端展示，不需要请求，但是要考虑到性能问题
+6. 模板引擎swig 后端数据可以直接在前端展示，不需要请求，但是要考虑到性能问题,必要的东西可以从后台往前端输出（为什么要使用模板引擎？）
 7. orm插件可以操作数据库
 8. express+php实战，有node操作数据库
-9. 错误处理要放到底部来兜底
+9. 错误处理要放到底部来兜底(一般有4**、5**的错误处理，还有要往里面写日志，推荐的日志管理工具是log4js)
+10. express实战 参见第16节2.express+php实战
 
 #### Koa,完全基于ES6,由Express原班人马打造的,Koa并没有捆绑任何中间件，而是提供了一套优雅的方法，帮助您快速而愉快地编写服务端的应用程序。
 1. 老袁推荐安装I/Ojs
@@ -195,6 +196,12 @@ node热部署工具（supervisor）：https://www.cnblogs.com/Leo_wl/p/3800276.h
 4. 错误处理和express不同，不能放到底部
 5. koa本身是比较纯净的，需要什么中间件就去网上npm仓库找
 6. koa2
+7. [koa学习总结](https://www.jianshu.com/p/e6aec8bcdcf4 "koa学习总结")
+
+
+#### 依赖使用mysql
+
+
 
 **爬虫系统以及Robots协议介绍**
 * **爬虫**，是一种自动获取网页内容的程序，是搜索引擎的重要组成部分，因此搜索引擎优化很大程度上就是针对爬虫而做出的优化。
@@ -202,33 +209,43 @@ node热部署工具（supervisor）：https://www.cnblogs.com/Leo_wl/p/3800276.h
 * 配置爬虫系统和开发环境 ，需要用到的node模块：express request cheerio
 
 #### 消息推送（app的消息推送）
-**数据推送之comet**
-**数据推送之webSocket**
-* 安装socket.io (npm i socket.io -S)
-**数据推送之SSE(Server-Send Event)**, EventSource
+* [数据推送之comet](https://www.jianshu.com/p/61cf17a090d9 "数据推送之comet")
+* **数据推送之webSocket**, 安装socket.io (npm i socket.io -S)
+* **数据推送之SSE(Server-Send Event)**, EventSource, [SSE](https://www.cnblogs.com/goloving/p/9196066.html "SSE")
 
-#### Nginx的反向代理与负载均衡
+#### Nginx的反向代理与负载均衡(nginx是一款轻量级的web服务器/反向代理服务器及电子邮件代理服务器)
 * 什么是反向代理和负载均衡?
 * 什么是正向代理和反向代理？**正向代理代理的对象是客户端，反向代理代理的对象是服务端** [正向和反向代理的区别](https://www.cnblogs.com/zhijun/p/proxy.html "正向和反向代理的区别")
+* 正向代理知道自己要访问的网站，反向代理不知道自己要访问哪个服务器
+* HTTP upstream模块，是Ngini服务器的一个重要模块，upstream模块实现在轮询和客户端ip之间实现后端的负载均衡。常用的指令有Ip_hash指令、server指令和upstream指令等。
+
  **部署NodeJS上线步骤**
  1. 打开https://brew.sh/index_zh-cn.html
  2. brew search ngnix(先查看是否有nginx)   brew install nginx(安装)
  3. brew info nginx
- 4. nginx -v 查看nginx信息
- 5. 启动sudo brew services start nginx(默认端口8080) ---这个方法比较蠢
+ 4. nginx -v 查看nginx版本(nginx -V查看nginx版本及安装的本地位置)
+ 5. 启动sudo brew services start nginx(默认端口8080) ---这个方法比较蠢([mac上nginx启动重启关闭](https://blog.csdn.net/samuelandkevin/article/details/79650951 "mac上nginx启动重启关闭"))
  - 备注：如果安装过jenkins的话这里失效
  - sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist
  - systemctl start jenkins
  6. 关闭sudo brew services stop nginx / nginx
  7. nginx -s reload 、nginx -s stop
- 8. 打开nginx具体安装目录 查看配置文件 /user/local/etc/nginx/
+ 8. 打开nginx具体安装目录 查看配置文件 /usr/local/etc/nginx
  9. 验证配置文件nginx -t -c 自己的配置文件地址
  10. 拷贝配置文件至node项目目录重新修改
  11. 服务器端的nginx地址
- 12. pm2动态监测文件
+ 12. pm2动态监测文件，能够动态的监控文件的上传，0秒热启动；能够负载均衡 CPU；内存的使用过高了，CPU调度太频繁会帮你自动重启；
+ * [PM2介绍及简易使用手册](http://auan.cn/internet/2059.html "PM2介绍及简易使用手册")
  13. 查看当前谁在使用Node进程 ps aux | grep node
- 14. 盖世绝学： lsof -i tcp:8081(查看谁在用8081端口)     kill -9 pid
- 15. shell脚本
+ 14. 盖世绝学： 
+ - 查看谁在使用node进程，ps aux | grep node
+ - 查看端口占用情况：lsof -i tcp:8081(查看谁在用8081端口), 
+ - 杀掉占用当前端口号的进程命令：sodu kill -9 pid(-9后面加一个空格，然后加上占用端口的进程PID，就可以杀掉占用端口的进程，最后重启就ok)
+ 15. 查看端口占用情况：sudo lsof -i :8080
+ 15. shell脚本，shelljs是node.js下的脚本语言解析器，具有丰富且强大的底层操作(window/linux/os x)权限。shelljs本质就是基于Node的一层命令封装插件，让前端开发者可以不依赖Linu也不依赖类似于cmder的转换工具，而是直接在我们最熟悉不过的js代码中编写shell命令实现功能。**shelljs做的事情就是自动化，从耗时的重复性常规动作里解放出来，提升开发效率和工作心情。**
+ * [shell常用命令](https://www.cnblogs.com/gsliuruigang/p/6487084.html "shell常用命令")
+
+
  **nginx的使用要自己手动配置一下才能理解的更清楚**
  ```
 nginx.conf配置文件
