@@ -274,3 +274,6 @@ http{
 **17小节 2如何阅读Nodejs源码及以后没看**
 
 #### 前后端分离与用户验证
+
+* [SSL延迟计算：为什么HTTPS比HTTP要慢？](https://blog.csdn.net/neng18/article/details/49684097/ "SSL延迟计算：为什么HTTPS比HTTP要慢？")
+* [nginx配置详解](https://www.runoob.com/w3cnote/nginx-setup-intro.html "nginx配置详解)
