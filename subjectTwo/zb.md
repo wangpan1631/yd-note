@@ -156,8 +156,14 @@ emitter.on(function(){//......todo})
 * system.js万能模块加载器
 
 * **容错远大于业务！！！**
+* gulp 
+* grunt
+* bower
+* yeoman
+
 * js是解释型语言
 * node 核心 libuv
-协程
+
+* 远程登录服务器 ssh root@192.168.0.21
 
 
