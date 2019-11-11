@@ -3,7 +3,7 @@
 1. 很棒的资源查询网站：MDN 和 javascript.info
 
 2. JSX 是一个看起来像XML的JS语法扩展。元素是构成React应用的最小单位，JSX就是用来声明React当中的元素，React使用JSX来描述用户界面；可以防止注入攻击，因为React DOM在渲染所有输入内容之前，默认会进行转义，可以有效地防止XSS（cross-site-scripting, 跨站脚本）攻击（JSX优点：JSX执行更快，因为它在编译为js代码后进行了优化）
-3. JSX , Babel会把JSX转译成一个名为React.createElement()函数调用。
+3. JSX , Babel会把JSX转译成一个名为React.createElement()函数调用。所以，本质上来讲，JSX只是为React.createElement(component, props, ...children)方法提供的语法糖。
 
 4. **元素渲染，** 元素是构成React应用的最小单位，与浏览器的DOM元素不同，React元素是创建开销极小的普通对象。ReactDOM会负责更新DOM来与React元素保持一致。
 ```
@@ -67,7 +67,7 @@ this.setState((state, props) => {
 11. **列表 && Key**，不建议使用索引来用作key值，因为这样做会导致性能变差，还可能引起组件状态的问题。**key只是在兄弟节点之间必须唯一，**数组元素中使用的key在其兄弟节点之间应该是独一无二的。然而，它们不需要是全局唯一的。当我们生成两个不同的数组是，我们可以使用相同的key值。
 
 12. **表单**，很重要的一块知识，因为是晚上看，看的有些晕乎，后面再**着重看一下，**
-* 受控组件和非受控组件
+* 受控组件和非受控组件(input textarea select都是受控组件；file input是非受控组件)
 * 官网推荐的form完整的解决方案[formik](https://jaredpalmer.com/formik/ "formik")
 
 13. **状态提升**，多个组件需要反映相同的变化数据，这时我们建议将共享状态提升到最近的共同父组件中去。（估计这里是为状态管理redux or mbox做准备）
@@ -86,6 +86,7 @@ this.setState((state, props) => {
 5. 自React16起，任何未被错误边界捕获的错误将会导致整个React组件树被卸载。
 
 6. **Refs转发**
+- 不能在函数式组件上使用ref属性。因为它们没有实例。
 ```
 const FancyButton = React.forwardRef((props, ref) => {
     <button ref={ref} className="FancyButton>
@@ -176,7 +177,21 @@ function App2() {
 
 16. 可控和不可控控件
 - 可控控件：符合react的数据流，数据存储在state中，便于使用;便于对数据进行处理；defaultValue和value={this.state.value}
-- 不可控
+- 不可控，未完。。。待续
+
+17. PropTypes进行类型检查，注意：PropTypes自从Reactv15.5起已弃用，需要使用prop-types库代替。
+- 随着应用日渐庞大，你可以通过类型检查捕获大量错误。对于某些应用来说，可以使用**Flow or TypeScript**这样的JS扩展来对整个应用程序进行类型检查。对于更大的代码库我们建议使用Flow or TypeScript来替代PropTypes。
+
+18. 性能优化
+* shouldComponentUpdate
+* PureComponent
+* Immutable.js [Immutable.js了解](https://juejin.im/post/5ac437436fb9a028c97a437c "Immutable.js了解")
+
+19. 自动绑定this
+- 对于使用class关键字创建的React组件，组件中的方法是不会自动绑定this的。类似地，通过ES6 class生成的实例，实例上的方法也不会绑定this。以下三种方法可以绑定this：
+* 把方法绑定给构造器(constructor)
+* 使用箭头函数，比如这样写：onClick={e => this.handleClick(e)}
+* 使用createReactClass
 
 
 
