@@ -82,10 +82,11 @@ this.setState((state, props) => {
 2. [context参考资料](https://juejin.im/post/5a90e0545188257a63112977 "context参考资料")
 
 3. **错误边界**，是一种React组件，这种组件**可以捕获并打印发生在其子组件树任何位置的js错误、并且，它会渲染出备用UI**，而不是渲染那些崩溃了的子组件树。错误边界在渲染期间、声明周期方法和整个组件树的构造函数中捕获错误。(可以使用错误边界，而非每次出现错误时卸载整个应用。错误边界是用以在子树内部捕获错误并在其位置展示回退UI的特殊组件，可以认为错误边界类似于try-catch语句，但针对React组件)
+* 如果一个class组件中定义了static getDerivedStateFromError()或componentDidCatch()这两个生命周期方法中的任意一个(或两个)时，那么它就变成一个错误边界。
 4. 错误边界无法捕获以下场景中的错误：事件处理、异步代码、服务端渲染、它自身抛出来的错误。
 5. 自React16起，任何未被错误边界捕获的错误将会导致整个React组件树被卸载。
 
-6. **Refs转发**
+6. **Refs转发**是一项将ref自动地通过组件传递到其一子组件的技巧。
 - 不能在函数式组件上使用ref属性。因为它们没有实例。
 ```
 const FancyButton = React.forwardRef((props, ref) => {
@@ -192,6 +193,8 @@ function App2() {
 * 把方法绑定给构造器(constructor)
 * 使用箭头函数，比如这样写：onClick={e => this.handleClick(e)}
 * 使用createReactClass
+
+20. Portals---提供了一种将子节点渲染到存在于父组件以外的DOM节点的优秀的方案。
 
 
 
