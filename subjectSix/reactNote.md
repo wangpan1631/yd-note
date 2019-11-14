@@ -196,5 +196,17 @@ function App2() {
 
 20. Portals---提供了一种将子节点渲染到存在于父组件以外的DOM节点的优秀的方案。
 
+21. HOOK---Hook是React16.8的新增特性。它可以让你在不编写class的情况下使用state以及其他的React特性。
+* Hook是一些可以让你在函数组件里”钩入“React state及生命周期等特性的函数。Hook不能在class组件中使用--这使得你不适用class也能使用react.
+* 为什么要引入HOOK？在组件之间复用状态逻辑很难、复杂组件变得难以理解、难以理解的class。（class组件也是存在一定弊端的，并且从概念上讲，react组件一直更像是函数，而HOOK则拥抱了函数，同时也没有牺牲react的精神原则）
+* Hook函数
+- useState(类似this.state and this.setState)
+- useEffect(跟class组件中的componentDidMount、componentDidUpdate and componentWillUnmount具有相同的用途，只不过被合并成了一个API)
+- useContext(让你不适用组件嵌套就可以订阅react的Context)
+- useReducer(可以让你通过reducer来管理组件本地的复杂state)
+* Hook使用规则
+- 只能在**函数最外层**调用Hook，不要在循环、条件判断或者子函数中调用。
+- 只能在**React的函数组件**中调用Hook，不要在其他js函数中调用。
+
 
 
