@@ -209,15 +209,18 @@ node热部署工具（supervisor）：https://www.cnblogs.com/Leo_wl/p/3800276.h
 * 配置爬虫系统和开发环境 ，需要用到的node模块：express request cheerio
 
 #### 消息推送（app的消息推送）
+* 前言：消息推送的实现：前端可以实现，可以设置一个定时器setInterval，每隔一段时间去请求后端接口，也可以函数自调用，请求回来之后再次请求，不过这样不断地向后端发起请求，会增加带宽，性能开销比较大。后端也可以实现。
 * [数据推送之comet](https://www.jianshu.com/p/61cf17a090d9 "数据推送之comet")
 * **数据推送之webSocket**, 安装socket.io (npm i socket.io -S)
 * **数据推送之SSE(Server-Send Event)**, EventSource, [SSE](https://www.cnblogs.com/goloving/p/9196066.html "SSE")
+
 
 #### Nginx的反向代理与负载均衡(nginx是一款轻量级的web服务器/反向代理服务器及电子邮件代理服务器)
 * 什么是反向代理和负载均衡?
 * 什么是正向代理和反向代理？**正向代理代理的对象是客户端，反向代理代理的对象是服务端** [正向和反向代理的区别](https://www.cnblogs.com/zhijun/p/proxy.html "正向和反向代理的区别")
 * 正向代理知道自己要访问的网站，反向代理不知道自己要访问哪个服务器
-* HTTP upstream模块，是Ngini服务器的一个重要模块，upstream模块实现在轮询和客户端ip之间实现后端的负载均衡。常用的指令有Ip_hash指令、server指令和upstream指令等。
+* HTTP upstream模块，是Nginx服务器的一个重要模块，upstream模块实现在轮询和客户端ip之间实现后端的负载均衡。常用的指令有Ip_hash指令、server指令和upstream指令等。
+* 负载均衡：使用硬件实现，使用软件实现
 
  **部署NodeJS上线步骤**
  1. 打开https://brew.sh/index_zh-cn.html
@@ -234,7 +237,7 @@ node热部署工具（supervisor）：https://www.cnblogs.com/Leo_wl/p/3800276.h
  9. 验证配置文件nginx -t -c 自己的配置文件地址
  10. 拷贝配置文件至node项目目录重新修改
  11. 服务器端的nginx地址
- 12. pm2动态监测文件，能够动态的监控文件的上传，0秒热启动；能够负载均衡 CPU；内存的使用过高了，CPU调度太频繁会帮你自动重启；
+ 12. **pm2**动态监测文件，能够动态的监控文件的上传，0秒热启动；能够负载均衡 CPU；内存的使用过高了，CPU调度太频繁会帮你自动重启；
  * [PM2介绍及简易使用手册](http://auan.cn/internet/2059.html "PM2介绍及简易使用手册")
  13. 查看当前谁在使用Node进程 ps aux | grep node
  14. 盖世绝学： 
@@ -249,7 +252,7 @@ node热部署工具（supervisor）：https://www.cnblogs.com/Leo_wl/p/3800276.h
  **nginx的使用要自己手动配置一下才能理解的更清楚**
  ```
 nginx.conf配置文件
-worker_processes 4;
+worker_processes 4; // 电脑是几核就写几
 events{
     worker_connections 1024;
 }
@@ -266,6 +269,7 @@ http{
     }
 }
  ```
+ * HTTP Upstream模块：upstream指令主要是用于设置一组可以在proxy_pass和fastcgi_pass指令中使用额外代理服务器，默认负载均衡方式为轮询。
 #### 腾讯地图H5 Node JS架构搭建
 * 完备的中间件，错误处理、配置、报告、用户信息、客户端判断是否是微信QQ、地理定位通过next挂载到request对象全局即可
 * 服务器集群，nginx负载均衡 -> 查找pm2启动服务器...后面的搞不懂了
